@@ -12,6 +12,9 @@ app.register_blueprint(sse, url_prefix='/stream')
 
 @app.route('/event/<action>')
 def event(action):
+    '''Given a certain action, add a timestamp
+    and randomly generated uuid and publish it
+    to the server-sent events'''
     user_id = uuid4()
     dateTimeObj = datetime.now()
     timestampStr = dateTimeObj.strftime("%d-%b-%Y (%H:%M:%S.%f)")
