@@ -7,7 +7,13 @@ To get started, run pip install
 pip install -r requirements.txt
 ```
 
-Next get Redis service started and then you can run the web server:
+And start an instance of Redis. If you have Docker installed, you can start a local Redis server with:
+
+``` sh
+docker run --name redis-sse -p 6379:6379 -d redis
+```
+
+Next, start up the main web server:
 
 ```sh
 gunicorn app:app --worker-class gevent --bind 127.0.0.1:5000
