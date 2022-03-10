@@ -4,3 +4,4 @@ urllib3
 gunicorn
 gevent
 requests
+sseclient-py
